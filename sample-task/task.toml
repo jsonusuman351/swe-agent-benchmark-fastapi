@@ -1,0 +1,9 @@
+id          = "session-expired-token-401"
+name        = "Fix Expired Session Token HTTP Response"
+description = "A FastAPI session service returns 500 Internal Server Error when a client presents an expired token. The bug is in src/session_repo.py: ExpiredTokenError is raised but never caught, causing FastAPI to emit a 500. Fix it so expired tokens receive 401 Unauthorized."
+difficulty  = "medium"
+type        = "debugging"
+language    = "python"
+framework   = "fastapi"
+tags        = ["python", "fastapi", "http", "debugging", "exception-handling"]
+entry_point = "tests/test.sh"
